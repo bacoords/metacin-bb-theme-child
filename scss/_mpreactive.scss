@@ -5,16 +5,18 @@
   h2{
     display: block;
     margin: 8px;
-      margin-bottom:-64px;
+    margin-bottom:-40px;
     text-shadow: 0px 0px 15px rgba(0,0,0,0.5);
     font-size:48px;
 //    align-self: flex-end;
     color: $white;
     @media(min-width:$bp-md){
       font-size:70px;
+	  margin-bottom: -55px;
     }
     @media(min-width:1120px){
       font-size:112px;
+	  margin-bottom: -84px;
     }
     @media(min-width:$bp-xl){ 
       font-size:128px;

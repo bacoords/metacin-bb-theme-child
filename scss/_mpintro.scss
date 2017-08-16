@@ -4,38 +4,38 @@
   &__text{
     max-width:100%;
     margin: 0 auto;
-    padding: 0.3rem;
+    padding: 6px;
     h2 {
-      font-size:3rem;
+      font-size:48px;
       margin-bottom: 1rem;
       color:$white;
       max-width:600px;
       display: block;
       margin:0 auto;
       @media(min-width:$bp-md){
-        font-size:3rem;
+        font-size:48px;
       }
       @media(min-width:$bp-lg){
-        font-size:4rem;
+        font-size:64px;
       }
       @media(min-width:$bp-xl){
-        font-size:5rem;
+        font-size:70px;
       }
     }
     p{
-      text-indent: 0.5rem;
+      text-indent: 8px;
       max-width:600px;
       display: block;
       color:$white;
       margin:0 auto;
       line-height: 1.4;
-      font-size:1.2rem;
-      margin-bottom: 1rem;
+      font-size:19.2px;
+      margin-bottom: 16px;
       font-family:$font-body;
       text-align: justify;
       @media(min-width: $bp-xl){
         max-width: 800px;
-        font-size: 1.6rem;
+        font-size: 25.6px;
       }
     }
     
