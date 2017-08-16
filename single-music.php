@@ -17,8 +17,10 @@
                   <?php the_title('<h3>','</h3>'); ?>
                 </div>
                 <div class="mpalbum__content">
-                  <h4>Teaser</h4>
-                  <div><?php the_content(); ?></div>
+                  <?php $content = get_the_content(); if( !empty($content) ): ?>
+					  <h4>Teaser</h4>
+					  <div><?php the_content(); ?></div>
+                  <?php endif; ?>
                   <small><?php echo get_post_meta( get_the_ID(), '_met_release', true ); ?></small>
                 </div>
                 <div class="mpalbum__footer">
