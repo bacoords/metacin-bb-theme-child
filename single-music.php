@@ -30,7 +30,23 @@
                       <h4>Track Listing</h4>
                       
                       <ul id="track-listing">
+                      
+                      <?php $tracks = get_post_meta( get_the_ID(), 'music_tracks_repeat_group', true ); ?>
+                      
+                      <?php foreach( $tracks as $key => $track ){ ?>
+                      
+                      	<li>
+                      		
+                      		<span><?php echo $key + 1; ?>. <?php echo $track['title']; ?></span>
+                      		<span><?php echo $track['length']; ?></span>
+                      		
+                      	</li>
+                      
+                      <?php } ?>
+	
                       </ul>
+                      
+                      
                       
                     </div>
                   </div>
@@ -82,49 +98,50 @@
 
         </div>
 
+		<?php if( get_post_meta( get_the_ID(), '_met_itunes_id', true ) ) : ?>
 
-		<script>
+			<script>
 
-			jQuery( document ).ready(function( $ ) {
+				jQuery( document ).ready(function( $ ) {
 
-				 function msToTime(duration) {
-					  var milliseconds = parseInt((duration%1000)/100)
-						  , seconds = parseInt((duration/1000)%60)
-						  , minutes = parseInt((duration/(1000*60))%60)
-						  , hours = parseInt((duration/(1000*60*60))%24);
+					 function msToTime(duration) {
+						  var milliseconds = parseInt((duration%1000)/100)
+							  , seconds = parseInt((duration/1000)%60)
+							  , minutes = parseInt((duration/(1000*60))%60)
+							  , hours = parseInt((duration/(1000*60*60))%24);
 
-					  hours = (hours < 10) ? "0" + hours : hours;
-					  seconds = (seconds < 10) ? "0" + seconds : seconds;
+						  hours = (hours < 10) ? "0" + hours : hours;
+						  seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-					  return minutes + ":" + seconds;
-				  }
+						  return minutes + ":" + seconds;
+					  }
 
-				$.getJSON('https://itunes.apple.com/lookup?id=<?php echo get_post_meta( get_the_ID(), '_met_itunes_id', true ); ?>&entity=song', function( response ){
+					$.getJSON('https://itunes.apple.com/lookup?id=<?php echo get_post_meta( get_the_ID(), '_met_itunes_id', true ); ?>&entity=song', function( response ){
 
-					var tracks = '';
-					
-					response.results.splice(0,1);
+						var tracks = '';
 
-					$.each(response.results, function(key, value){
-						var num = key + 1;
-						tracks += '<li>' + 
-						  '<span>' + num + '. ' + value.trackName + '</span>' +
-                          '<span>' + msToTime(value.trackTimeMillis) + '</span>' +
-						  '</li>';	
+						response.results.splice(0,1);
+
+						$.each(response.results, function(key, value){
+							var num = key + 1;
+							tracks += '<li>' + 
+							  '<span>' + num + '. ' + value.trackName + '</span>' +
+							  '<span>' + msToTime(value.trackTimeMillis) + '</span>' +
+							  '</li>';	
+
+						});
+
+						$('#track-listing').html( tracks );
+
 
 					});
-					
-					$('#track-listing').html( tracks );
-					
+
 
 				});
 
+			</script>
 
-			});
-
-		</script>
-
-
+	<?php endif; ?>
         
 	<?php endwhile; else : ?>
 
