@@ -1,0 +1,104 @@
+
+//Promo Box
+
+
+.mpbox{
+  max-width: 100%;
+  width: 100%;
+  margin: 0rem auto;
+  padding:2rem 0.5rem;
+  background:linear-gradient(to bottom, rgba($primary-blk, 0) 1%, rgba($primary-blk, 0.5) 20%, rgba($primary-blk, 0.5) 80%, rgba($primary-blk, 0) 100%);
+
+  &__inner{
+    max-width: 900px;
+    margin: 0 auto;
+    & > div{
+      width: 100%;
+      @media(min-width:$bp-md){
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+  &__mpcard .mpcard{
+      margin: 0 auto;
+    
+  }
+  &__text{
+    padding:2rem 0rem;
+    text-align: center;
+    @media(min-width:$bp-md){
+      flex-basis:600px;
+      text-align: left;
+    }
+    h2 {
+      font-size:3rem;
+      margin-bottom: 1rem;
+      color:$white;
+      max-width:600px;
+      display: block;
+      margin:0 auto;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      @media(min-width:$bp-md){
+        font-size:3rem;
+      }
+      @media(min-width:$bp-lg){
+        font-size:4rem;
+        transform: translateY(-2rem); 
+      }
+      @media(min-width:$bp-xl){
+        font-size:5rem;
+        transform: translateY(-2rem); 
+      }
+    }
+    p{
+      text-indent: 0.5rem;
+      max-width:600px;
+      display: block;
+      color:$white;
+      margin:0 auto;
+      line-height: 1.4;
+      font-size:1.2rem;
+      margin-bottom: 1rem;
+      font-family:$font-body;
+      text-align: justify;
+      @media(min-width: $bp-lg){
+      }
+    }
+    h4{
+      display: block;
+      font-size: 4rem;
+      color:rgba($white, 0.3);
+      text-align: center;
+      font-weight: 400;
+      margin: 0rem;
+      small{
+        display: block;
+        color:$white;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      @media(min-width:$bp-md){
+        text-align:left;
+      }
+    }
+    a{
+      display: inline-block;
+      padding:0.7rem 1rem 0.7rem 1rem;
+      color:$white;
+      text-decoration: none;
+      border-radius: 3px;
+      margin-top:1rem;
+      transition: all 300ms ease;
+      letter-spacing: 1px;
+      background:$mpblue;
+      @media(min-width: $bp-md){
+        float: right;
+      }
+      &:hover{
+        background:$mpblue-dk;
+        color:$white;
+      }
+    }
+  }
+}

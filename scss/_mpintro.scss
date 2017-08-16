@@ -1,0 +1,70 @@
+
+//Musicology
+.mpintro{
+  &__text{
+    max-width:100%;
+    margin: 0 auto;
+    padding: 0.3rem;
+    h2 {
+      font-size:3rem;
+      margin-bottom: 1rem;
+      color:$white;
+      max-width:600px;
+      display: block;
+      margin:0 auto;
+      @media(min-width:$bp-md){
+        font-size:3rem;
+      }
+      @media(min-width:$bp-lg){
+        font-size:4rem;
+      }
+      @media(min-width:$bp-xl){
+        font-size:5rem;
+      }
+    }
+    p{
+      text-indent: 0.5rem;
+      max-width:600px;
+      display: block;
+      color:$white;
+      margin:0 auto;
+      line-height: 1.4;
+      font-size:1.2rem;
+      margin-bottom: 1rem;
+      font-family:$font-body;
+      text-align: justify;
+      @media(min-width: $bp-xl){
+        max-width: 800px;
+        font-size: 1.6rem;
+      }
+    }
+    
+    a {
+      color: $white;
+      font-weight: 900;
+      text-decoration: none;
+      transition: all 300ms ease;
+      &:hover {
+        color: $mpblue-dk;
+      }
+    }
+    
+    a.mpintro__btn {
+      display: inline;
+      padding:0.7rem 1rem 0.7rem 1rem;
+      color:$white;
+      text-decoration: none;
+      border-radius: 3px;
+      margin:1rem auto;
+      transition: all 300ms ease;
+      letter-spacing: 1px;
+      background:$mpblue;
+      text-align: center; 
+      &:hover{
+        background:$mpblue-dk;
+        color:$white;
+      }
+    }
+  }
+}
+

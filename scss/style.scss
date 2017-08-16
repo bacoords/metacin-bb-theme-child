@@ -1,0 +1,81 @@
+$svg-base: #eee;
+$left: #FF5722;
+$bottom: #73156c;
+$right: #2582a8;
+$top: #fff;
+
+$music-color: rgb(19,64,64); 
+$laboratory-color: rgb(22,23,25);
+$gallery-color: $bottom;
+$events-color: $right;
+
+$body-bg:#121316;
+
+$mpblue: #2582a8;
+$mpblue-dk: #195770;
+
+$primary: #777c8d;
+$primary-dk: #1a1b1f; 
+$primary-blk: #06161d;
+
+$white: #f9f9fa;
+
+$half: 350px;
+$half--neg: -350px;
+
+$font-headings: 'Montserrat', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+$bp-md: 700px;
+$bp-lg: 1100px;
+$bp-xl: 1400px;
+
+
+/* Menu Fixes */
+.fl-page-nav-right .fl-page-nav-wrap .navbar-nav li > a:hover {
+	transition: all 300ms ease;
+	background: #777c8d;
+}
+.fl-page-nav-right .fl-page-header-row .navbar-right > li:last-child > a{
+	padding-right: 15px;
+}
+.fl-page-nav-right.fl-page-header-fixed .fl-page-header-container.container, .fl-page-header-fixed .fl-page-header-container.container{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#particles{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 0;
+}
+
+
+
+// Stylesheets
+//@import 'variables';
+@import 'animations';
+@import 'headers'; 
+@import 'compass'; 
+@import 'footer'; 
+
+@import 'mpscroll';
+@import 'mpintro';
+@import 'mpbox';
+@import 'mpcard';
+@import 'mpgal';
+@import 'mpfadein';
+@import 'mpmodal';
+@import 'mpalbum';
+@import 'mpaudio';
+@import 'mploading'; 
+@import 'mpreactive'; 
+@import 'mpfront'; 
+@import 'mpsnapbox'; 
+@import 'mpwppage'; 
+@import 'forms'; 
+ 
+
+@import 'utilities';

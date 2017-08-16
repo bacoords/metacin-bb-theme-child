@@ -1,0 +1,137 @@
+
+
+// Flip Card Media Object
+$mpcard-sm:150px;
+$mpcard-lg:400px;
+
+.mpbox__mpcard{
+  flex-basis: $mpcard-sm;
+  @media(min-width: $bp-md){
+    flex-basis: $mpcard-lg;
+  }
+}
+
+.mpcard{
+  width: $mpcard-sm;
+  height: $mpcard-sm;
+  perspective: 1000px;
+  
+
+  &__inner{
+    width: $mpcard-sm;
+    height: $mpcard-sm;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position:relative;
+    @media(min-width:$bp-md){
+      width:$mpcard-lg;
+      height:$mpcard-lg;
+    }
+  }
+  &__front{
+    width: $mpcard-sm;
+    height: $mpcard-sm;  
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+//    box-shadow: 0px 7px 45px 0px rgba(0,0,0,0.75); 
+    border-radius:3px;
+    overflow:hidden;
+    z-index: 2;
+    transform: rotateY(0deg);
+    @media(min-width:$bp-md){
+      width:$mpcard-lg;
+      height:$mpcard-lg;
+    }
+  }
+  &__back{   
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+//    box-shadow: 0px 7px 45px 0px rgba(0,0,0,0.75);
+    border-radius:3px;
+    overflow:hidden;
+    transform: rotateY(180deg);
+    width: $mpcard-sm;
+    height: $mpcard-sm;
+    @media(min-width:$bp-md){
+      width:$mpcard-lg;
+      height:$mpcard-lg;
+    }
+    &__inner{
+      background: rgba($primary-dk, 0.8); 
+      width: $mpcard-sm;
+      height: $mpcard-sm;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      @media(min-width:$bp-md){
+        width:$mpcard-lg;
+        height:$mpcard-lg;
+      }
+    }
+    i{
+      transition: all 300ms ease;
+      cursor: pointer;
+      color:$white;
+      font-size: 8rem;
+      &:hover {
+        color:$primary;
+
+      }
+    }
+  }
+  @media(min-width:$bp-md){
+    width:$mpcard-lg;
+    height:$mpcard-lg;
+  }
+  &--music{
+    .mpcard__front{ 
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/07/album-4.png) no-repeat center;
+      background-size: cover;
+    }
+    .mpcard__back{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/07/album-4.png) no-repeat center;
+      background-size: cover;
+    }
+  }
+  &--gallery{
+    .mpcard__front{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/gallery-8.png) no-repeat center;
+      background-size: cover;
+    }
+    .mpcard__back{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/gallery-8.png) no-repeat center;
+      background-size: cover;
+    }
+  }
+  &--laboratory{
+    .mpcard__front{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/neurons.jpg) no-repeat center;
+      background-size: cover;
+    }
+    .mpcard__back{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/neurons.jpg) no-repeat center;
+      background-size: cover;
+    }
+  }
+  &--events{
+    .mpcard__front{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/pexels-2.jpg) no-repeat center;
+      background-size: cover;
+    }
+    .mpcard__back{
+      background: url(https://metacin.briancoords.com/wp-content/uploads/2017/08/pexels-2.jpg) no-repeat center;
+      background-size: cover;
+    }
+  }
+}
+
+.mpcard:hover .mpcard__inner, .mpcard.hover .mpcard__inner{
+  transform: rotateY(180deg);
+}
+
+

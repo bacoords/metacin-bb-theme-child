@@ -1,0 +1,42 @@
+.mpreactive__right{
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+  h2{
+    display: block;
+    margin: 8px;
+      margin-bottom:-64px;
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    font-size:48px;
+//    align-self: flex-end;
+    color: $white;
+    @media(min-width:$bp-md){
+      font-size:70px;
+    }
+    @media(min-width:1120px){
+      font-size:112px;
+    }
+    @media(min-width:$bp-xl){ 
+      font-size:128px;
+    }
+  }
+  h3{
+    display: block;
+    margin: 8px;
+//      margin-bottom:-15rem;
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    font-size:24px;
+    color: $mpblue;
+//      align-self: flex-end;
+    @media(min-width:$bp-md){
+      font-size:33.8px;
+    }
+    @media(min-width:1120px){
+      font-size:51.2px;
+    }
+    @media(min-width:$bp-xl){
+      font-size:64px;
+    }
+  }
+
+  }
