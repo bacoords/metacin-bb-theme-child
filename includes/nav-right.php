@@ -35,6 +35,7 @@
 	</div>
 </header><!-- .fl-page-header -->
 
+<?php if( is_front_page() || is_archive()) : ?>
 
 <div class="mpscroll">
 
@@ -43,3 +44,5 @@
   </a>
 
 </div>  
+
+<?php endif; ?>

@@ -92,7 +92,6 @@
 					  }
 
 
-
 					  var checkExist = setInterval(function() {
 						 if ($('.mpalbum__image > img').width() > 0) {
 							initMPAlbum();

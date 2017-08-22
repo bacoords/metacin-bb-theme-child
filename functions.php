@@ -116,3 +116,63 @@ function rest_theme_routes() {
 	wp_reset_postdata();
 	return $routes;
 }
+
+
+
+
+
+/**
+ * Custom modules
+ */
+function cb_custom_social_loader() {
+	if ( class_exists( 'FLBuilder' ) ) {
+
+		// register the new setting for the new social media icon
+		// replace the word houzz below with the name of the social media icon you want to use
+		add_action( 'customize_register', 'cb_custom_social_customize_register' );
+		function cb_custom_social_customize_register( $customizer )
+		{
+			$customizer->add_setting( 'fl-social-apple', array( 
+				'default' => '' 
+			) );
+
+			$customizer->add_control(
+				new WP_Customize_Control( $customizer, 'fl-social-apple', array(
+					'label' 	=> 'Apple Music',
+					'section' 	=> 'fl-social-links'
+				) )
+			);
+		}  
+		
+		
+		
+		// add our new social media icon into the list of icons output by the Beaver Builder Theme
+		// in our example we are using Houzz as the social media icon to be added so we add the word houzz below
+		add_filter( 'fl_social_icons', 'cb_custom_social_social_icons' );
+		function cb_custom_social_social_icons( $icons ) {
+			$icons = array(
+				'facebook',
+				'twitter',
+				'google',
+				'linkedin',
+				'yelp',
+				'pinterest',
+				'tumblr',
+				'vimeo',
+				'apple',
+				'youtube',
+				'flickr',
+				'instagram',
+				'dribbble',
+				'500px',
+				'blogger',
+				'github',
+				'rss',
+				'email'
+			);
+			return $icons;
+		}
+
+	}
+}
+add_action( 'init', 'cb_custom_social_loader' );
