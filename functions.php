@@ -24,6 +24,7 @@ if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
 // Include Custom Post Type Declarations
 require_once( 'inc/custom-post-types.php' );
 require_once( 'inc/meta-boxes.php' );
+require_once( 'inc/sensation.php' );
 
 
 
