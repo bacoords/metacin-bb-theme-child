@@ -94,7 +94,7 @@ body.page-template-page-sensation {
 		border: 5px solid $sensation_black;
 		color: $sensation_black;
 		font-size: 3em;
-		text-decoration: none;
+		text-decoration: none !important;
 		border-radius: 100px;
 		height: 90px;
 		width: 90px;
@@ -111,6 +111,12 @@ body.page-template-page-sensation {
 			border-color: $sensation_blue;
 			color: $sensation_blue;
 			text-decoration: none;
+		}
+		&.disabled{
+			border-color: $sensation_black;
+			color: $sensation_black;
+			cursor: inherit;
+			opacity: 0.3;
 		}
 	}
 }

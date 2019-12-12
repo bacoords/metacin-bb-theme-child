@@ -29,7 +29,7 @@ get_header();
 
 			<?php elseif ( ! get_user_meta( get_current_user_id(), '_met_sensation_submitted_survey', true ) ) : ?>
 
-				<?php get_template_part( 'templates/sensation/intro' ); ?>
+				<?php get_template_part( 'templates/sensation/survey' ); ?>
 
 			<?php else : ?>
 

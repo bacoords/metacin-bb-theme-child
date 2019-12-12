@@ -27,6 +27,9 @@
 
 		$('.met-sensation-select-panel-number').click(function(e){
 			e.preventDefault()
+			if ( $(this).hasClass('disabled') ) {
+				return;
+			}
 			$(this).toggleClass('active');
 			$('#met-sensation-select-form').slideToggle();
 
