@@ -3,13 +3,13 @@
 
 
 function met_add_users_tools_page() {
-	add_submenu_page( 'tools.php', 'User Tools', 'User Tools', 'manage_options', 'met-users-tools', 'met_users_tools_page' );
+	add_submenu_page( 'tools.php', 'Metacin Tools', 'Metacin Tools', 'manage_options', 'met-users-tools', 'met_users_tools_page' );
 }
 add_action( 'admin_menu', 'met_add_users_tools_page' );
 
 function met_users_tools_page(){ ?>
 	<div class="wrap">
-		<h1 class="wp-heading-inline">User Tools</h1>
+		<h1 class="wp-heading-inline">Metacin Tools</h1>
 
 		<div class="poststuff">
 
@@ -18,8 +18,10 @@ function met_users_tools_page(){ ?>
 				  method="post">
 				<input type="hidden" name="met_clear_survey_information" value="1"/>
 				<div class="postbox">
+					<h2 class="hndle">
+						<span>Clear Sensation User Information</span>
+					</h2>
 					<div class="inside">
-						<h2>Clear Survey Information</h2>
 						<p>
 							<label for="user_id">User Id</label>
 							<input type="text" name="user_id" />
@@ -40,6 +42,8 @@ function met_users_tools_page(){ ?>
 						delete_user_meta( $user_id, '_met_sensation_instrument' );
 						delete_user_meta( $user_id, '_met_sensation_musical_training' );
 						delete_user_meta( $user_id, '_met_sensation_musical_genre' );
+						// @todo Should also loop through and delete the actual entries?
+						delete_user_meta( $user_id, '_met_sensation_form_entries' );
 					}
 					?>
 				</div>
