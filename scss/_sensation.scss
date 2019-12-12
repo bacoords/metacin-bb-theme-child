@@ -130,11 +130,19 @@ body.page-template-page-sensation {
 	label{
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		font-size: 1.2em;
+		line-height: 1;
 		border: 1px solid #fff;
 		border-radius: 100px;
 		height: 30px;
 		width: 30px;
+		cursor: pointer;
+		&:hover{
+
+			color: $sensation_black;
+			background-color: #fff;
+		}
 	}
 	input[type=radio]{
 		visibility: hidden;
@@ -151,6 +159,6 @@ body.page-template-page-sensation {
 	color: $sensation_yellow;
 }
 
-.met-sensation-plyr {
+.met-sensation .plyr {
 	margin-bottom: 2em;
 }

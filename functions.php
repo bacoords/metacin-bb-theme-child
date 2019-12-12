@@ -14,16 +14,16 @@ add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 /**
  * CMB2
  */
-if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
-  require_once __DIR__ . '/cmb2/init.php';
-} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
-  require_once __DIR__ . '/CMB2/init.php';
-}
+// if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
+//   require_once __DIR__ . '/cmb2/init.php';
+// } elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
+//   require_once __DIR__ . '/CMB2/init.php';
+// }
 
 
 // Include Custom Post Type Declarations
 require_once( 'inc/custom-post-types.php' );
-require_once( 'inc/meta-boxes.php' );
+// require_once( 'inc/meta-boxes.php' );
 require_once( 'inc/sensation.php' );
 
 
