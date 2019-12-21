@@ -1,5 +1,13 @@
 (function($) {
 
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+
 	$(document).ready(function($){
 
 		$('.met-sensation-intro-btn').click(function(e){
@@ -54,6 +62,61 @@
 			$('#met-sensation-select-form').attr('action', action + '?song=' + id);
 
 		});
+
+		if ( $('#totalResults').length > 0 ) {
+			var song = getUrlVars()['song'];
+			var colors = [];
+
+			var ctx = document.getElementById('totalResults').getContext('2d');
+			var totalResults = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+					datasets: [{
+						label: 'Rating',
+						data: sensation.totalResults,
+						backgroundColor: 'rgba(0, 0, 0, 0.5)',
+						borderColor: 'rgba(0, 0, 0, 1)',
+						borderWidth: 1
+					}]
+				},
+				options: {
+					legend: false,
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					}
+				}
+			});
+
+			var ctx = document.getElementById('myResults').getContext('2d');
+			var myResults = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+					datasets: [{
+						label: 'Rating',
+						data: sensation.myResults,
+						backgroundColor: 'rgba(0, 0, 0, 0.5)',
+						borderColor: 'rgba(0, 0, 0, 1)',
+						borderWidth: 1
+					}]
+				},
+				options: {
+					legend: false,
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					}
+				}
+			});
+		}
 
 
 

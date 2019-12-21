@@ -22,10 +22,12 @@ final class FLChildTheme {
 
 		wp_register_script( 'mpfade', FL_CHILD_THEME_URL . '/js/mpfade.js', array( 'jquery' ), $the_theme->get( 'Version' ), true );
 
+		wp_register_script( 'chart-js', 'https://cdn.jsdelivr.net/npm/chart.js@2.8.0', array( 'jquery' ), '3.5.6', true );
+
 		wp_register_script( 'plyr', 'https://cdn.plyr.io/3.5.6/plyr.js', array( 'jquery' ), '3.5.6', true );
 		wp_register_style( 'plyr', 'https://cdn.plyr.io/3.5.6/plyr.css', array(), '3.5.6' );
 
-		wp_register_script( 'page-sensation', FL_CHILD_THEME_URL . '/js/page-sensation.js', array( 'jquery', 'plyr' ), $the_theme->get( 'Version' ), true );
+		wp_register_script( 'page-sensation', FL_CHILD_THEME_URL . '/js/page-sensation.js', array( 'jquery', 'plyr', 'chart-js' ), $the_theme->get( 'Version' ), true );
 
 		wp_enqueue_script( 'particles' );
 		wp_enqueue_script( 'mpfade' );
@@ -49,6 +51,15 @@ final class FLChildTheme {
 		if ( is_page( 'sensation' ) ) {
 			wp_enqueue_style( 'plyr' );
 			wp_enqueue_script( 'plyr' );
+			wp_enqueue_script( 'chart-js' );
+			wp_localize_script(
+				'page-sensation',
+				'sensation',
+				array(
+					'myResults'    => met_sensation_get_track_results( false ),
+					'totalResults' => met_sensation_get_track_results( true ),
+				)
+			);
 			wp_enqueue_script( 'page-sensation' );
 		}
 

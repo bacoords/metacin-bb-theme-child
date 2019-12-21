@@ -171,3 +171,40 @@ body.page-template-page-sensation {
 .met-sensation .plyr {
 	margin-bottom: 2em;
 }
+
+
+// Results Page
+.met-sensation-results {
+	display: block;
+	padding: 1em;
+	margin: 2em;
+	background: $sensation_yellow;
+	&-number {
+		border: 5px solid $sensation_blue;
+		color: $sensation_blue;
+		font-size: 3em;
+		text-decoration: none !important;
+		border-radius: 100px;
+		height: 90px;
+		width: 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0.5em auto 10px;
+	}
+	h2{
+		font-size: 6em;
+		color: $sensation_blue;
+		margin-top: 0;
+	}
+}
+.met-sensation-chart {
+	display: block;
+	padding: 2em;
+	margin: 2em;
+	background: $sensation_yellow;
+	&-legend{
+		margin-bottom: 2em;
+		font-weight: bold;
+	}
+}

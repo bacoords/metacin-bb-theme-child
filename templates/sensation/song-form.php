@@ -36,7 +36,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<label class="met-sensation-select-label-left" for="_met_sensation_song_name_1">What one-word names would give it ?</label>
+			<label class="met-sensation-select-label-left" for="_met_sensation_song_name_1">What 1-word names would you give it ?</label>
 		</div>
 		<div class="col-md-3">
 			<input type="text" class="form-control" placeholder="song name 1" name="_met_sensation_song_name_1">

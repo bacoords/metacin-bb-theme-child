@@ -133,5 +133,73 @@ function met_sensation_display_user_meta( $profileuser ){
 	<?php
 }
 add_action( 'edit_user_profile', 'met_sensation_display_user_meta', 1 );
-add_action('show_user_profile', 'met_sensation_display_user_meta', 1);
+add_action( 'show_user_profile', 'met_sensation_display_user_meta', 1 );
 
+
+/**
+ * Helper to get the real track titles.
+ *
+ * @param integer $track
+ * @return string
+ */
+function met_sensation_get_song_title( $track = 1 ) {
+	return 'Levitation';
+}
+
+
+/**
+ * Helper to build array of all the track results.
+ *
+ * @param boolean $user_id
+ * @return void
+ */
+function met_sensation_get_track_results( $get_total = false ) {
+
+	$result     = array();
+	$user_id    = get_current_user_id();
+	$song_forms = get_user_meta( $user_id, '_met_sensation_form_entries', true );
+
+	for ( $i = 1; $i < 11; $i++ ) {
+
+		// Reset values.
+		$scores_total = 0;
+		$survey_ids   = array();
+
+		// Confirm user has set this song already.
+		if ( isset( $song_forms[ $i ] ) ) {
+
+			// Are we getting total or just this one score?
+			if ( ! $get_total ) {
+				$args = array(
+					'fields'     => 'ids',
+					'post_type'  => 'form_entry',
+					'meta_query' => array(
+						array(
+							'key'   => '_met_sensation_song_id',
+							'value' => $i,
+						),
+					),
+				);
+				$survey_ids = get_posts( $args );
+			} else {
+				$survey_ids = array( $song_forms[ $i ] );
+			}
+			
+			if ( $survey_ids ) {
+				foreach ( $survey_ids as $id ) {
+					$score = get_post_meta( $id, '_met_sensation_song_rating', true );
+					if ( $score ) {
+						$scores_total += (int) $score;
+					}
+				}
+				$result[] = ( $scores_total / count( $survey_ids ) );
+			} else {
+				$result[] = 0;
+			}
+		} else {
+			$result[] = 0;
+		}
+	}
+
+	return $result;
+}
