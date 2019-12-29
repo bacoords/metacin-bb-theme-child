@@ -1,5 +1,33 @@
 <?php 
 
+
+
+
+/**
+ * Adds our custom ACF Options page.
+ *
+ * @return void
+ */
+function met_sensation_add_options_page() {
+
+	// Check function exists.
+	if ( function_exists( 'acf_add_options_page' ) ) {
+
+		// Register options page.
+		acf_add_options_page(
+			array(
+				'page_title' => __( 'Sensation Settings' ),
+				'menu_title' => __( 'Sensation Settings' ),
+				'menu_slug'  => 'met-sensation-settings',
+				'capability' => 'manage_options',
+			)
+		);
+	}
+}
+
+add_action( 'acf/init', 'met_sensation_add_options_page' );
+
+
 /**
  * Handles forms for the sensation project.
  *

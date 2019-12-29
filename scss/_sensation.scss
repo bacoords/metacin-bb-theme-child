@@ -79,6 +79,9 @@ body.page-template-page-sensation {
 		color: $sensation_black;
 		border-color: $sensation_yellow;
 	}
+	&.btn-mb{
+		margin-bottom: 2em;
+	}
 }
 
 
@@ -207,4 +210,8 @@ body.page-template-page-sensation {
 		margin-bottom: 2em;
 		font-weight: bold;
 	}
+}
+
+.met-sensation-select-submit{
+	margin-bottom: 2em;
 }

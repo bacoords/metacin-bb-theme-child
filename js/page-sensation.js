@@ -83,7 +83,21 @@
 				options: {
 					legend: false,
 					scales: {
+						xAxes: [{
+							scaleLabel: {
+							  display: true,
+							  labelString: 'Track',
+							  fontSize: 18,
+							  fontWeight: 700
+							}
+						}],
 						yAxes: [{
+							scaleLabel: {
+							  display: true,
+							  labelString: 'Rating',
+							  fontSize: 18,
+							  fontWeight: 700
+							},
 							ticks: {
 								beginAtZero: true
 							}
@@ -108,7 +122,21 @@
 				options: {
 					legend: false,
 					scales: {
+						xAxes: [{
+							scaleLabel: {
+							  display: true,
+							  labelString: 'Track',
+							  fontSize: 18,
+							  fontWeight: 700
+							}
+						}],
 						yAxes: [{
+							scaleLabel: {
+							  display: true,
+							  labelString: 'Rating',
+							  fontSize: 18,
+							  fontWeight: 700
+							},
 							ticks: {
 								beginAtZero: true
 							}
