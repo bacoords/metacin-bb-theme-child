@@ -31,16 +31,20 @@
 			var plyr = new Plyr('#plyr', { settings: [] });
 		}
 
-
+		var clicked = false;
 
 		$('.met-sensation-select-panel-number').click(function(e){
-			e.preventDefault()
-			if ( $(this).hasClass('disabled') ) {
+
+			e.preventDefault();
+
+			if ( $(this).hasClass('disabled') || clicked ) {
 				return;
 			}
 			$(this).toggleClass('active');
 			$('#met-sensation-select-form').slideToggle();
 
+			clicked = true;
+			
 			// Set up song and hidden inputs.
 			var song = $(this).data('src');
 			var id = $(this).data('track');
@@ -58,9 +62,7 @@
 
 			$('#_met_sensation_song_id').val(id);
 			$('#_met_sensation_song_src').val(song);
-
-			var action = $('#met-sensation-select-form').attr('action');
-			$('#met-sensation-select-form').attr('action', action + '?song=' + id);
+			$('#met-sensation-select-form').attr('action', sensation.formAction + '?song=' + id);
 
 		});
 

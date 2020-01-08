@@ -58,6 +58,7 @@ final class FLChildTheme {
 				array(
 					'myResults'    => met_sensation_get_track_results( false ),
 					'totalResults' => met_sensation_get_track_results( true ),
+					'formAction'   => home_url( 'laboratory/sensation/' ),
 				)
 			);
 			wp_enqueue_script( 'page-sensation' );
