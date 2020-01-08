@@ -28,7 +28,7 @@
 		});
 
 		if ( $('#plyr').length > 0 ) {
-			var plyr = new Plyr('#plyr');
+			var plyr = new Plyr('#plyr', { settings: [] });
 		}
 
 
@@ -44,9 +44,10 @@
 			// Set up song and hidden inputs.
 			var song = $(this).data('src');
 			var id = $(this).data('track');
+			var title = $(this).data('title');
 			plyr.source = {
 				type: 'audio',
-				title: 'Unknown Track',
+				title: title,
 				sources: [
 					{
 						src: song,
@@ -65,7 +66,18 @@
 
 		if ( $('#totalResults').length > 0 ) {
 			var song = getUrlVars()['song'];
-			var colors = [];
+			var backgroundColors = [];
+			var borderColors = [];
+			for ( var i = 1; i < 11; i++ ) {
+				if ( song == i ) {
+					backgroundColors.push( 'rgba(0, 0, 255, 0.5)' );
+					borderColors.push( 'rgba(0, 0, 255, 1)' );
+				} else {
+					backgroundColors.push( 'rgba(0, 0, 0, 0.5)' );
+					borderColors.push( 'rgba(0, 0, 0, 1)' );
+				}
+				
+			}
 
 			var ctx = document.getElementById('totalResults').getContext('2d');
 			var totalResults = new Chart(ctx, {
@@ -75,8 +87,8 @@
 					datasets: [{
 						label: 'Rating',
 						data: sensation.totalResults,
-						backgroundColor: 'rgba(0, 0, 0, 0.5)',
-						borderColor: 'rgba(0, 0, 0, 1)',
+						backgroundColor: backgroundColors,
+						borderColor: borderColors,
 						borderWidth: 1
 					}]
 				},
@@ -114,8 +126,8 @@
 					datasets: [{
 						label: 'Rating',
 						data: sensation.myResults,
-						backgroundColor: 'rgba(0, 0, 0, 0.5)',
-						borderColor: 'rgba(0, 0, 0, 1)',
+						backgroundColor: backgroundColors,
+						borderColor: borderColors,
 						borderWidth: 1
 					}]
 				},

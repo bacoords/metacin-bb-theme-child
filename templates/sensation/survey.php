@@ -1,4 +1,27 @@
-<form method="post" action="<?php home_url( 'laboratory/sensation' ); ?>" class="met-sensation-survey">
+
+<div id="met-sensation-intro-panel-1" class="met-sensation-intro-panel">
+	<h2>Instruction:</h2>
+	<p>This music research project is simple and easy to perform:</p>
+
+	<p>1)  First provide some easy information about your music preferences & experiences.</p>
+
+	<p>2)  Then simply choose 10 music tracks, listen and provide a few responses as you go. </p>
+
+	<p>3)  The entire process will take about an hour.  Finish in one session or take your time.</p>
+
+	<p>4)  It is best to listen to the music on airpods or headphones in the same quiet setting.</p>
+
+	<p>5)  You will see your results in comparison to the entire study results after each track.</p>
+
+	<p>Let’s get started !</p>
+</div>
+<div class="met-sensation-intro-btn-container text-center">
+	<a href="#" class="btn btn-lg btn-sensation met-sensation-intro-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></a>
+</div>
+
+
+
+<form id="met-sensation-intro-panel-2"  method="post" action="<?php home_url( 'laboratory/sensation' ); ?>" class="met-sensation-survey" style="display:none">
 
 	<input type="hidden" name="_met_sensation_submitted_survey" value="1">
 	<input type="hidden" name="met_action" value="_met_sensation_submitted_survey">
