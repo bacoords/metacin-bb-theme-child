@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Sensation Page
+ * Template Name: Phenomenon Page
  */
 get_header();
 ?>

@@ -1,6 +1,6 @@
 {
     "key": "group_5e084963e7162",
-    "title": "Sensation Settings",
+    "title": "Phenomenon Settings",
     "fields": [
         {
             "key": "field_5e084975ed6aa",
@@ -738,7 +738,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "met-sensation-settings"
+                "value": "met-phenomenon-settings"
             }
         ]
     ],
@@ -750,5 +750,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1577601558
+    "modified": 1579406072
 }

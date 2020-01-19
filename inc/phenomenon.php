@@ -8,7 +8,7 @@
  *
  * @return void
  */
-function met_sensation_add_options_page() {
+function met_phenomenon_add_options_page() {
 
 	// Check function exists.
 	if ( function_exists( 'acf_add_options_page' ) ) {
@@ -16,16 +16,16 @@ function met_sensation_add_options_page() {
 		// Register options page.
 		acf_add_options_page(
 			array(
-				'page_title' => __( 'Sensation Settings' ),
-				'menu_title' => __( 'Sensation Settings' ),
-				'menu_slug'  => 'met-sensation-settings',
+				'page_title' => __( 'Phenomenon Settings' ),
+				'menu_title' => __( 'Phenomenon Settings' ),
+				'menu_slug'  => 'met-phenomenon-settings',
 				'capability' => 'manage_options',
 			)
 		);
 	}
 }
 
-add_action( 'acf/init', 'met_sensation_add_options_page' );
+add_action( 'acf/init', 'met_phenomenon_add_options_page' );
 
 
 /**
@@ -181,7 +181,7 @@ function met_sensation_get_song_title( $track = 1 ) {
  * @param boolean $user_id
  * @return void
  */
-function met_sensation_get_track_results( $get_total = false ) {
+function met_phenomenon_get_track_results( $get_total = false ) {
 
 	$result     = array();
 	$user_id    = get_current_user_id();

@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
 // Include Custom Post Type Declarations.
 require_once 'inc/custom-post-types.php';
-require_once 'inc/sensation.php';
+require_once 'inc/phenomenon.php';
 require_once 'inc/tools-page.php';
 
 // Theme Support Options.

@@ -27,7 +27,7 @@ final class FLChildTheme {
 		wp_register_script( 'plyr', 'https://cdn.plyr.io/3.5.6/plyr.js', array( 'jquery' ), '3.5.6', true );
 		wp_register_style( 'plyr', 'https://cdn.plyr.io/3.5.6/plyr.css', array(), '3.5.6' );
 
-		wp_register_script( 'page-sensation', FL_CHILD_THEME_URL . '/js/page-sensation.js', array( 'jquery', 'plyr', 'chart-js' ), $the_theme->get( 'Version' ), true );
+		wp_register_script( 'page-phenomenon', FL_CHILD_THEME_URL . '/js/page-phenomenon.js', array( 'jquery', 'plyr', 'chart-js' ), $the_theme->get( 'Version' ), true );
 
 		wp_enqueue_script( 'particles' );
 		wp_enqueue_script( 'mpfade' );
@@ -48,20 +48,20 @@ final class FLChildTheme {
 			)
 		);
 
-		if ( is_page( 'sensation' ) ) {
+		if ( is_page( 'phenomenon' ) ) {
 			wp_enqueue_style( 'plyr' );
 			wp_enqueue_script( 'plyr' );
 			wp_enqueue_script( 'chart-js' );
 			wp_localize_script(
-				'page-sensation',
+				'page-phenomenon',
 				'sensation',
 				array(
-					'myResults'    => met_sensation_get_track_results( false ),
-					'totalResults' => met_sensation_get_track_results( true ),
-					'formAction'   => home_url( 'laboratory/sensation/' ),
+					'myResults'    => met_phenomenom_get_track_results( false ),
+					'totalResults' => met_phenomenom_get_track_results( true ),
+					'formAction'   => home_url( 'laboratory/phenomenon/' ),
 				)
 			);
-			wp_enqueue_script( 'page-sensation' );
+			wp_enqueue_script( 'page-phenomenon' );
 		}
 
 	}
