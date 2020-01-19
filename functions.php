@@ -96,3 +96,15 @@ function cb_custom_social_loader() {
 	}
 }
 add_action( 'init', 'cb_custom_social_loader' );
+
+
+
+/**
+ * Changes the 'password again' field label.
+ *
+ * @return void
+ */
+function metacin_filter_reg_form_password_again_label() {
+	return 'Confirm Password';
+}
+add_filter( 'rcp_registration_password_again_label', 'metacin_filter_reg_form_password_again_label' );
