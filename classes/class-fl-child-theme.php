@@ -54,10 +54,10 @@ final class FLChildTheme {
 			wp_enqueue_script( 'chart-js' );
 			wp_localize_script(
 				'page-phenomenon',
-				'sensation',
+				'phenomenon',
 				array(
-					'myResults'    => met_phenomenom_get_track_results( false ),
-					'totalResults' => met_phenomenom_get_track_results( true ),
+					'myResults'    => met_phenomenon_get_track_results( false ),
+					'totalResults' => met_phenomenon_get_track_results( true ),
 					'formAction'   => home_url( 'laboratory/phenomenon/' ),
 				)
 			);

@@ -19,7 +19,7 @@ function met_users_tools_page(){ ?>
 				<input type="hidden" name="met_clear_survey_information" value="1"/>
 				<div class="postbox">
 					<h2 class="hndle">
-						<span>Clear Sensation User Information</span>
+						<span>Clear Phenomenon User Information</span>
 					</h2>
 					<div class="inside">
 						<p>
@@ -32,18 +32,18 @@ function met_users_tools_page(){ ?>
 					<?php
 					if( isset( $_POST['met_clear_survey_information'] ) && '1' == $_POST['met_clear_survey_information'] ) {
 						$user_id = (int) sanitize_text_field( $_POST['user_id'] );
-						delete_user_meta( $user_id, '_met_sensation_viewed_intro' );
-						delete_user_meta( $user_id, '_met_sensation_submitted_survey' );
-						delete_user_meta( $user_id, '_met_sensation_birth_year' );
-						delete_user_meta( $user_id, '_met_sensation_gender' );
-						delete_user_meta( $user_id, '_met_sensation_profession' );
-						delete_user_meta( $user_id, '_met_sensation_zip_code' );
-						delete_user_meta( $user_id, '_met_sensation_education' );
-						delete_user_meta( $user_id, '_met_sensation_instrument' );
-						delete_user_meta( $user_id, '_met_sensation_musical_training' );
-						delete_user_meta( $user_id, '_met_sensation_musical_genre' );
+						delete_user_meta( $user_id, '_met_phenomenon_viewed_intro' );
+						delete_user_meta( $user_id, '_met_phenomenon_submitted_survey' );
+						delete_user_meta( $user_id, '_met_phenomenon_birth_year' );
+						delete_user_meta( $user_id, '_met_phenomenon_gender' );
+						delete_user_meta( $user_id, '_met_phenomenon_profession' );
+						delete_user_meta( $user_id, '_met_phenomenon_zip_code' );
+						delete_user_meta( $user_id, '_met_phenomenon_education' );
+						delete_user_meta( $user_id, '_met_phenomenon_instrument' );
+						delete_user_meta( $user_id, '_met_phenomenon_musical_training' );
+						delete_user_meta( $user_id, '_met_phenomenon_musical_genre' );
 						// @todo Should also loop through and delete the actual entries?
-						delete_user_meta( $user_id, '_met_sensation_form_entries' );
+						delete_user_meta( $user_id, '_met_phenomenon_form_entries' );
 					}
 					?>
 				</div>

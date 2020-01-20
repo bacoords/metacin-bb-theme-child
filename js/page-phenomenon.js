@@ -10,19 +10,19 @@
 
 	$(document).ready(function($){
 
-		$('.met-sensation-intro-btn').click(function(e){
+		$('.met-phenomenon-intro-btn').click(function(e){
 			e.preventDefault();
 			var panel = $(this).data('panel') + 1,
-				id = "#met-sensation-intro-panel-" + panel;
-				idNext = "#met-sensation-intro-panel-" + ( panel + 1 );
+				id = "#met-phenomenon-intro-panel-" + panel;
+				idNext = "#met-phenomenon-intro-panel-" + ( panel + 1 );
 			if ( $(id).length > 0 ) {
-				$('.met-sensation-intro-panel').hide();
+				$('.met-phenomenon-intro-panel').hide();
 				$(id).show();
 				$(this).data( 'panel', panel );
 			}
 			if ( $(idNext).length == 0 ) {
-				$('.met-sensation-intro-btn-container').hide();
-				$('.met-sensation-intro-submit-container').show();
+				$('.met-phenomenon-intro-btn-container').hide();
+				$('.met-phenomenon-intro-submit-container').show();
 			}
 			
 		});
@@ -33,7 +33,7 @@
 
 		var clicked = false;
 
-		$('.met-sensation-select-panel-number').click(function(e){
+		$('.met-phenomenon-select-panel-number').click(function(e){
 
 			e.preventDefault();
 
@@ -41,7 +41,7 @@
 				return;
 			}
 			$(this).toggleClass('active');
-			$('#met-sensation-select-form').slideToggle();
+			$('#met-phenomenon-select-form').slideToggle();
 
 			clicked = true;
 			
@@ -60,9 +60,9 @@
 				],
 			};
 
-			$('#_met_sensation_song_id').val(id);
-			$('#_met_sensation_song_src').val(song);
-			$('#met-sensation-select-form').attr('action', sensation.formAction + '?song=' + id);
+			$('#_met_phenomenon_song_id').val(id);
+			$('#_met_phenomenon_song_src').val(song);
+			$('#met-phenomenon-select-form').attr('action', phenomenon.formAction + '?song=' + id);
 
 		});
 
@@ -88,7 +88,7 @@
 					labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 					datasets: [{
 						label: 'Rating',
-						data: sensation.totalResults,
+						data: phenomenon.totalResults,
 						backgroundColor: backgroundColors,
 						borderColor: borderColors,
 						borderWidth: 1
@@ -127,7 +127,7 @@
 					labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 					datasets: [{
 						label: 'Rating',
-						data: sensation.myResults,
+						data: phenomenon.myResults,
 						backgroundColor: backgroundColors,
 						borderColor: borderColors,
 						borderWidth: 1

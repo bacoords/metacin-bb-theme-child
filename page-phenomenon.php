@@ -21,27 +21,27 @@ get_header();
 
 	<?php if ( rcp_user_can_access() ) : ?>
 
-		<div class="met-sensation">
+		<div class="met-phenomenon">
 
-			<?php if ( ! get_user_meta( get_current_user_id(), '_met_sensation_viewed_intro', true ) ) : ?>
+			<?php if ( ! get_user_meta( get_current_user_id(), '_met_phenomenon_viewed_intro', true ) ) : ?>
 
-				<?php get_template_part( 'templates/sensation/intro' ); ?>
+				<?php get_template_part( 'templates/phenomenon/intro' ); ?>
 
-			<?php elseif ( ! get_user_meta( get_current_user_id(), '_met_sensation_submitted_survey', true ) ) : ?>
+			<?php elseif ( ! get_user_meta( get_current_user_id(), '_met_phenomenon_submitted_survey', true ) ) : ?>
 
-				<?php get_template_part( 'templates/sensation/survey' ); ?>
+				<?php get_template_part( 'templates/phenomenon/survey' ); ?>
 
 			<?php else : ?>
 
 				<?php if ( isset( $_GET['song'] ) ) : ?>
 
-					<?php get_template_part( 'templates/sensation/song', 'results' ); ?>
+					<?php get_template_part( 'templates/phenomenon/song', 'results' ); ?>
 
 				<?php else : ?>
 
-					<?php get_template_part( 'templates/sensation/song', 'select' ); ?>
+					<?php get_template_part( 'templates/phenomenon/song', 'select' ); ?>
 
-					<?php get_template_part( 'templates/sensation/song', 'form' ); ?>
+					<?php get_template_part( 'templates/phenomenon/song', 'form' ); ?>
 
 				<?php endif; ?>
 

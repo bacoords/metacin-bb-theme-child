@@ -32,94 +32,94 @@ add_action( 'acf/init', 'met_phenomenon_add_options_page' );
 
 
 /**
- * Handles forms for the sensation project.
+ * Handles forms for the phenomenon project.
  *
  * @return void
  */
-function met_sensation_form_handler() {
+function met_phenomenon_form_handler() {
 
 	if ( ! isset( $_POST['met_action'] ) ) {
 		return;
 	}
 
-	// Handle the sensation intro form.
-	if ( '_met_sensation_viewed_intro' == $_POST['met_action'] ) {
+	// Handle the phenomenon intro form.
+	if ( '_met_phenomenon_viewed_intro' == $_POST['met_action'] ) {
 
-		if ( ! wp_verify_nonce( $_POST['_met_sensation_viewed_intro_nonce'], '_met_sensation_viewed_intro' ) ) {
+		if ( ! wp_verify_nonce( $_POST['_met_phenomenon_viewed_intro_nonce'], '_met_phenomenon_viewed_intro' ) ) {
 			return;
 		}
 
-		update_user_meta( $_POST['user_id'], '_met_sensation_viewed_intro', $_POST['_met_sensation_viewed_intro'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_viewed_intro', $_POST['_met_phenomenon_viewed_intro'] );
 
 	}
 
-	// Handle the sensation survey.
-	if ( '_met_sensation_submitted_survey' == $_POST['met_action'] ) {
+	// Handle the phenomenon survey.
+	if ( '_met_phenomenon_submitted_survey' == $_POST['met_action'] ) {
 
-		if ( ! wp_verify_nonce( $_POST['_met_sensation_submitted_survey_nonce'], '_met_sensation_submitted_survey' ) ) {
+		if ( ! wp_verify_nonce( $_POST['_met_phenomenon_submitted_survey_nonce'], '_met_phenomenon_submitted_survey' ) ) {
 			return;
 		}
 
 		// Update user meta.
-		update_user_meta( $_POST['user_id'], '_met_sensation_submitted_survey', $_POST['_met_sensation_submitted_survey'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_birth_year', $_POST['_met_sensation_birth_year'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_gender', $_POST['_met_sensation_gender'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_profession', $_POST['_met_sensation_profession'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_zip_code', $_POST['_met_sensation_zip_code'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_education', $_POST['_met_sensation_education'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_instrument', $_POST['_met_sensation_instrument'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_musical_training', $_POST['_met_sensation_musical_training'] );
-		update_user_meta( $_POST['user_id'], '_met_sensation_musical_genre', $_POST['_met_sensation_musical_genre'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_submitted_survey', $_POST['_met_phenomenon_submitted_survey'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_birth_year', $_POST['_met_phenomenon_birth_year'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_gender', $_POST['_met_phenomenon_gender'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_profession', $_POST['_met_phenomenon_profession'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_zip_code', $_POST['_met_phenomenon_zip_code'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_education', $_POST['_met_phenomenon_education'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_instrument', $_POST['_met_phenomenon_instrument'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_musical_training', $_POST['_met_phenomenon_musical_training'] );
+		update_user_meta( $_POST['user_id'], '_met_phenomenon_musical_genre', $_POST['_met_phenomenon_musical_genre'] );
 
 	}
 
 
-	// Handle the sensation song form.
-	if ( '_met_sensation_song' == $_POST['met_action'] ) {
+	// Handle the phenomenon song form.
+	if ( '_met_phenomenon_song' == $_POST['met_action'] ) {
 
-		if ( ! wp_verify_nonce( $_POST['_met_sensation_song_nonce'], '_met_sensation_song' ) ) {
+		if ( ! wp_verify_nonce( $_POST['_met_phenomenon_song_nonce'], '_met_phenomenon_song' ) ) {
 			return;
 		}
 
 		// Get userdata.
 		$user_id  = (int) sanitize_text_field( $_POST['user_id'] );
 		$userdata = get_userdata( $user_id );
-		$song_id = (int) sanitize_text_field( $_POST['_met_sensation_song_id'] );
+		$song_id = (int) sanitize_text_field( $_POST['_met_phenomenon_song_id'] );
 
 		// Handle the form entry.
 		$post_arr = array(
 			'post_type'  => 'form_entry',
-			'post_title' => 'Sensation - ' . basename( sanitize_text_field( $_POST['_met_sensation_song_src'] ) ),
+			'post_title' => 'Phenomenon - ' . basename( sanitize_text_field( $_POST['_met_phenomenon_song_src'] ) ),
 			'post_status' => 'publish',
 			'meta_input' => array(
-				'_met_form_type'             => 'Sensation',
+				'_met_form_type'             => 'Phenomenon',
 				'_met_user_name'             => $userdata->user_nicename,
 				'_met_email'                 => $userdata->user_email,
-				'_met_sensation_song_id'     => $song_id,
-				'_met_sensation_song_src'    => sanitize_text_field( $_POST['_met_sensation_song_src'] ),
-				'_met_sensation_emotion'     => sanitize_text_field( $_POST['_met_sensation_emotion'] ),
-				'_met_sensation_action'      => sanitize_text_field( $_POST['_met_sensation_action'] ),
-				'_met_sensation_color'       => sanitize_text_field( $_POST['_met_sensation_color'] ),
-				'_met_sensation_imagery'     => sanitize_text_field( $_POST['_met_sensation_imagery'] ),
-				'_met_sensation_song_name_1' => sanitize_text_field( $_POST['_met_sensation_song_name_1'] ),
-				'_met_sensation_song_name_2' => sanitize_text_field( $_POST['_met_sensation_song_name_2'] ),
-				'_met_sensation_song_rating' => sanitize_text_field( $_POST['_met_sensation_song_rating'] ),
+				'_met_phenomenon_song_id'     => $song_id,
+				'_met_phenomenon_song_src'    => sanitize_text_field( $_POST['_met_phenomenon_song_src'] ),
+				'_met_phenomenon_emotion'     => sanitize_text_field( $_POST['_met_phenomenon_emotion'] ),
+				'_met_phenomenon_action'      => sanitize_text_field( $_POST['_met_phenomenon_action'] ),
+				'_met_phenomenon_color'       => sanitize_text_field( $_POST['_met_phenomenon_color'] ),
+				'_met_phenomenon_imagery'     => sanitize_text_field( $_POST['_met_phenomenon_imagery'] ),
+				'_met_phenomenon_song_name_1' => sanitize_text_field( $_POST['_met_phenomenon_song_name_1'] ),
+				'_met_phenomenon_song_name_2' => sanitize_text_field( $_POST['_met_phenomenon_song_name_2'] ),
+				'_met_phenomenon_song_rating' => sanitize_text_field( $_POST['_met_phenomenon_song_rating'] ),
 			),
 		);
 
 		$post_id = wp_insert_post( $post_arr );
 		
 		// Update user meta.
-		$songs = get_user_meta( $user_id, '_met_sensation_form_entries', true );
+		$songs = get_user_meta( $user_id, '_met_phenomenon_form_entries', true );
 		if ( ! $songs ) {
 			$songs = array();
 		}
 		$songs[ $song_id ] = $post_id;
-		update_user_meta( $user_id, '_met_sensation_form_entries', $songs );
+		update_user_meta( $user_id, '_met_phenomenon_form_entries', $songs );
 
 	}
 }
-add_action( 'init', 'met_sensation_form_handler' );
+add_action( 'init', 'met_phenomenon_form_handler' );
 
 
 
@@ -128,27 +128,27 @@ add_action( 'init', 'met_sensation_form_handler' );
  * @param  [type] $profileuser [description]
  * @return [type]              [description]
  */
-function met_sensation_display_user_meta( $profileuser ){
+function met_phenomenon_display_user_meta( $profileuser ){
 	?>
-	<h2>Sensation User Meta</h2>
+	<h2>Phenomenon User Meta</h2>
 	<table class="form-table">
 		<tbody>
-			<tr><th><strong>Viewed Sensation Intro:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_viewed_intro', true ); ?></td></tr>
-			<tr><th><strong>Viewed Sensation Survey:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_submitted_survey', true ); ?></td></tr>
-			<tr><th><strong>Birth Year:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_birth_year', true ); ?></td></tr>
-			<tr><th><strong>Gender:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_gender', true ); ?></td></tr>
-			<tr><th><strong>Profession:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_profession', true ); ?></td></tr>
-			<tr><th><strong>Zip:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_zip_code', true ); ?></td></tr>
-			<tr><th><strong>Education:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_education', true ); ?></td></tr>
-			<tr><th><strong>Instrument:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_instrument', true ); ?></td></tr>
-			<tr><th><strong>Musical Training:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_musical_training', true ); ?></td></tr>
-			<tr><th><strong>Genre:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_sensation_musical_genre', true ); ?></td></tr>
+			<tr><th><strong>Viewed Phenomenon Intro:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_viewed_intro', true ); ?></td></tr>
+			<tr><th><strong>Viewed Phenomenon Survey:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_submitted_survey', true ); ?></td></tr>
+			<tr><th><strong>Birth Year:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_birth_year', true ); ?></td></tr>
+			<tr><th><strong>Gender:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_gender', true ); ?></td></tr>
+			<tr><th><strong>Profession:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_profession', true ); ?></td></tr>
+			<tr><th><strong>Zip:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_zip_code', true ); ?></td></tr>
+			<tr><th><strong>Education:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_education', true ); ?></td></tr>
+			<tr><th><strong>Instrument:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_instrument', true ); ?></td></tr>
+			<tr><th><strong>Musical Training:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_musical_training', true ); ?></td></tr>
+			<tr><th><strong>Genre:</strong></th><td><?php echo get_user_meta( $profileuser->ID, '_met_phenomenon_musical_genre', true ); ?></td></tr>
 
 			<?php
-			$form_entries = get_user_meta( $profileuser->ID, '_met_sensation_form_entries', true );
+			$form_entries = get_user_meta( $profileuser->ID, '_met_phenomenon_form_entries', true );
 			if ( $form_entries ) {
 				?>
-				<tr><th><strong>Sensation Form Entries:</strong></th><td>
+				<tr><th><strong>Phenomenon Form Entries:</strong></th><td>
 					<?php
 					foreach ( $form_entries as $key => $value ) {
 						echo "<a href='" . admin_url( 'post.php?post=' . $value . '&action=edit' ) . "'>Song {$key}</a><br>";
@@ -163,8 +163,8 @@ function met_sensation_display_user_meta( $profileuser ){
 
 	<?php
 }
-add_action( 'edit_user_profile', 'met_sensation_display_user_meta', 1 );
-add_action( 'show_user_profile', 'met_sensation_display_user_meta', 1 );
+add_action( 'edit_user_profile', 'met_phenomenon_display_user_meta', 1 );
+add_action( 'show_user_profile', 'met_phenomenon_display_user_meta', 1 );
 
 
 /**
@@ -173,7 +173,7 @@ add_action( 'show_user_profile', 'met_sensation_display_user_meta', 1 );
  * @param integer $track
  * @return string
  */
-function met_sensation_get_song_title( $track = 1 ) {
+function met_phenomenon_get_song_title( $track = 1 ) {
 	return 'Levitation';
 }
 
@@ -188,7 +188,7 @@ function met_phenomenon_get_track_results( $get_total = false ) {
 
 	$result     = array();
 	$user_id    = get_current_user_id();
-	$song_forms = get_user_meta( $user_id, '_met_sensation_form_entries', true );
+	$song_forms = get_user_meta( $user_id, '_met_phenomenon_form_entries', true );
 
 	for ( $i = 1; $i < 11; $i++ ) {
 
@@ -206,7 +206,7 @@ function met_phenomenon_get_track_results( $get_total = false ) {
 					'post_type'  => 'form_entry',
 					'meta_query' => array(
 						array(
-							'key'   => '_met_sensation_song_id',
+							'key'   => '_met_phenomenon_song_id',
 							'value' => $i,
 						),
 					),
@@ -218,7 +218,7 @@ function met_phenomenon_get_track_results( $get_total = false ) {
 			
 			if ( $survey_ids ) {
 				foreach ( $survey_ids as $id ) {
-					$score = get_post_meta( $id, '_met_sensation_song_rating', true );
+					$score = get_post_meta( $id, '_met_phenomenon_song_rating', true );
 					if ( $score ) {
 						$scores_total += (int) $score;
 					}

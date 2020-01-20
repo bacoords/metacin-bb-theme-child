@@ -1,8 +1,8 @@
-$sensation_yellow: #FEE6A0;
-$sensation_black: #121316;
-$sensation_blue: #0000FF;
+$phenomenon_yellow: #FEE6A0;
+$phenomenon_black: #121316;
+$phenomenon_blue: #0000FF;
 
-body.page-template-page-sensation {
+body.page-template-page-phenomenon {
 	h1.fl-post-title {
 		font-size: 50px;
 	}
@@ -12,34 +12,34 @@ body.page-template-page-sensation {
 }
 
 // Intro
-.met-sensation-intro-panel {
+.met-phenomenon-intro-panel {
 	background-color: #BED7EC;
-	color: $sensation_black;
+	color: $phenomenon_black;
 	padding: 1em;
 	margin-bottom: 2em;
     box-shadow: 0px 2px 8px 8px rgba($white, 0.6);
 	h2 {
 		margin-top: 0;
-		color: $sensation_black;
+		color: $phenomenon_black;
 	}
 	p {
 		text-indent: 2em;
 	}
 }
 
-.met-sensation-intro-btn-container {
+.met-phenomenon-intro-btn-container {
 	display: block;
 	margin-bottom: 2em;
 }
 
-.met-sensation-intro-submit-container {
+.met-phenomenon-intro-submit-container {
 	display: block;
 	margin-bottom: 2em;
 }
 
 
 // Survey
-.met-sensation-survey {
+.met-phenomenon-survey {
 	label {
 		font-size: 1.4rem;
 	}
@@ -47,7 +47,7 @@ body.page-template-page-sensation {
 		margin-bottom: 1em;
 	}
 
-	.met-sensation-survey-radios {
+	.met-phenomenon-survey-radios {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -58,26 +58,26 @@ body.page-template-page-sensation {
 			padding-right: 5px;
 		}
 	}
-	.met-sensation-survey-submit {
+	.met-phenomenon-survey-submit {
 		margin-top: 2em;
 		margin-bottom: 2em;
 	}
-	.met-sensation-survey-label-left {
-		color: $sensation_yellow;
+	.met-phenomenon-survey-label-left {
+		color: $phenomenon_yellow;
 	}
 }
 
 
 // Btn
-.btn.btn-sensation {
-	background-color: $sensation_yellow;
-	color: $sensation_black;
-	border-color: $sensation_yellow;
+.btn.btn-phenomenon {
+	background-color: $phenomenon_yellow;
+	color: $phenomenon_black;
+	border-color: $phenomenon_yellow;
 	font-weight: bold;
 	&:hover{
-		background-color: $sensation_yellow;
-		color: $sensation_black;
-		border-color: $sensation_yellow;
+		background-color: $phenomenon_yellow;
+		color: $phenomenon_black;
+		border-color: $phenomenon_yellow;
 	}
 	&.btn-mb{
 		margin-bottom: 2em;
@@ -86,19 +86,19 @@ body.page-template-page-sensation {
 
 
 // Panel
-.met-sensation-select-panel {
-	background-color: $sensation_yellow;
-	color: $sensation_black;
+.met-phenomenon-select-panel {
+	background-color: $phenomenon_yellow;
+	color: $phenomenon_black;
 	padding: 1em;
 	margin-bottom: 2em;
     box-shadow: 0px 2px 8px 8px rgba($white, 0.6);
 	h2{
-		color: $sensation_black;
+		color: $phenomenon_black;
 		margin-bottom: 0.5em;
 	}
 	&-number{
-		border: 5px solid $sensation_black;
-		color: $sensation_black;
+		border: 5px solid $phenomenon_black;
+		color: $phenomenon_black;
 		font-size: 3em;
 		text-decoration: none !important;
 		border-radius: 100px;
@@ -109,25 +109,25 @@ body.page-template-page-sensation {
 		align-items: center;
 		margin: 10px auto;
 		&:hover{
-			border-color: $sensation_blue;
-			color: $sensation_blue;
+			border-color: $phenomenon_blue;
+			color: $phenomenon_blue;
 			text-decoration: none;
 		}
 		&.active{
-			border-color: $sensation_blue;
-			color: $sensation_blue;
+			border-color: $phenomenon_blue;
+			color: $phenomenon_blue;
 			text-decoration: none;
 		}
 		&.disabled{
-			border-color: $sensation_black;
-			color: $sensation_black;
+			border-color: $phenomenon_black;
+			color: $phenomenon_black;
 			cursor: inherit;
 			opacity: 0.3;
 		}
 	}
 }
 
-#met-sensation-select-form {
+#met-phenomenon-select-form {
 	margin-top: 2em;
 	margin-bottom: 2em;
 
@@ -135,7 +135,7 @@ body.page-template-page-sensation {
 		margin-bottom: 1em;
 	}
 }
-.met-sensation-select-radios{
+.met-phenomenon-select-radios{
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
@@ -152,7 +152,7 @@ body.page-template-page-sensation {
 		cursor: pointer;
 		&:hover{
 
-			color: $sensation_black;
+			color: $phenomenon_black;
 			background-color: #fff;
 		}
 	}
@@ -161,17 +161,17 @@ body.page-template-page-sensation {
 		margin-left: -30px;
 	}
 	input[type=radio]:checked + label{
-		color: $sensation_black;
+		color: $phenomenon_black;
 		background-color: #fff;
 	}
 }
 
-.met-sensation-select-label-left {
+.met-phenomenon-select-label-left {
 	font-size: 1.4rem;
-	color: $sensation_yellow;
+	color: $phenomenon_yellow;
 }
 
-.met-sensation .plyr {
+.met-phenomenon .plyr {
 	margin-bottom: 2em;
 	button {
 		border: none;
@@ -180,14 +180,14 @@ body.page-template-page-sensation {
 
 
 // Results Page
-.met-sensation-results {
+.met-phenomenon-results {
 	display: block;
 	padding: 1em;
 	margin: 2em;
-	background: $sensation_yellow;
+	background: $phenomenon_yellow;
 	&-number {
-		border: 5px solid $sensation_blue;
-		color: $sensation_blue;
+		border: 5px solid $phenomenon_blue;
+		color: $phenomenon_blue;
 		font-size: 3em;
 		text-decoration: none !important;
 		border-radius: 100px;
@@ -200,21 +200,21 @@ body.page-template-page-sensation {
 	}
 	h2{
 		font-size: 6em;
-		color: $sensation_blue;
+		color: $phenomenon_blue;
 		margin-top: 0;
 	}
 }
-.met-sensation-chart {
+.met-phenomenon-chart {
 	display: block;
 	padding: 2em;
 	margin: 2em;
-	background: $sensation_yellow;
+	background: $phenomenon_yellow;
 	&-legend{
 		margin-bottom: 2em;
 		font-weight: bold;
 	}
 }
 
-.met-sensation-select-submit{
+.met-phenomenon-select-submit{
 	margin-bottom: 2em;
 }

@@ -1,5 +1,5 @@
 
-	<div id="met-sensation-intro-panel-1" class="met-sensation-intro-panel">
+	<div id="met-phenomenon-intro-panel-1" class="met-phenomenon-intro-panel">
 
 		<h2>Thank You ...</h2>
 
@@ -19,7 +19,7 @@
 		<p>Learn more at <a href="<?php echo esc_attr( home_url() ); ?>">Metacin.com</a></p>
 	</div>
 
-	<div class="met-sensation-intro-btn-container text-center">
-		<a href="<?php echo esc_attr( home_url() ); ?>" class="btn btn-lg btn-sensation">Home <i class="fas fa-play-circle"></i></a>
+	<div class="met-phenomenon-intro-btn-container text-center">
+		<a href="<?php echo esc_attr( home_url() ); ?>" class="btn btn-lg btn-phenomenon">Home <i class="fas fa-play-circle"></i></a>
 	</div>
 
