@@ -24,7 +24,7 @@ function met_users_tools_page(){ ?>
 					<div class="inside">
 						<p>
 							<label for="user_id">User Id</label>
-							<input type="text" name="user_id" />
+							<input type="text" name="user_id" class="regular-text"  />
 						</p>
 						<br /><br />
 						<input type="submit" class="button-primary" name="submit" value="Submit">
@@ -44,6 +44,29 @@ function met_users_tools_page(){ ?>
 						delete_user_meta( $user_id, '_met_phenomenon_musical_genre' );
 						// @todo Should also loop through and delete the actual entries?
 						delete_user_meta( $user_id, '_met_phenomenon_form_entries' );
+					}
+					?>
+				</div>
+			</form>
+			<form class=""
+				  action="<?php echo admin_url( 'tools.php?page=met-users-tools' ); ?>"
+				  method="post">
+				<input type="hidden" name="met_recalc_song_average" value="1"/>
+				<div class="postbox">
+					<h2 class="hndle">
+						<span>Recalculate a song's average.</span>
+					</h2>
+					<div class="inside">
+						<p>
+							<label for="track">Track</label>
+							<input type="number" min="1" max="10" value="1" name="track" class="regular-text" />
+						</p>
+						<br /><br />
+						<input type="submit" class="button-primary" name="submit" value="Submit">
+					</div>
+					<?php
+					if( isset( $_POST['met_recalc_song_average'] ) && '1' == $_POST['met_recalc_song_average'] ) {
+						met_phenomenon_update_track_average_score( $_POST['track'] );
 					}
 					?>
 				</div>

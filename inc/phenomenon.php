@@ -117,6 +117,9 @@ function met_phenomenon_form_handler() {
 		$songs[ $song_id ] = $post_id;
 		update_user_meta( $user_id, '_met_phenomenon_form_entries', $songs );
 
+		// Recalc song average
+		met_phenomenon_update_track_average_score( $song_id );
+
 	}
 }
 add_action( 'init', 'met_phenomenon_form_handler' );
@@ -174,7 +177,45 @@ add_action( 'show_user_profile', 'met_phenomenon_display_user_meta', 1 );
  * @return string
  */
 function met_phenomenon_get_song_title( $track = 1 ) {
-	return 'Levitation';
+	$song_info = get_field( 'phenomenon_song_' . $track, 'options' );
+	return ( isset( $song_info['song_title'] ) ) ? $song_info['song_title'] : 'Untitled';
+}
+
+
+/**
+ * Recalcs the average for a track.
+ *
+ * @param integer $track
+ * @return void
+ */
+function met_phenomenon_update_track_average_score( $track = 0 ) {
+
+	if ( ! $track ) {
+		return;
+	}
+
+	$args = array(
+		'fields'     => 'ids',
+		'post_type'  => 'form_entry',
+		'meta_query' => array(
+			array(
+				'key'   => '_met_phenomenon_song_id',
+				'value' => $track,
+			),
+		),
+	);
+	$survey_ids = get_posts( $args );
+	if ( $survey_ids ) {
+		$scores_total = 0;
+		foreach ( $survey_ids as $id ) {
+			$score = get_post_meta( $id, '_met_phenomenon_song_rating', true );
+			if ( $score ) {
+				$scores_total += (int) $score;
+			}
+		}
+		$average = ( $scores_total / count( $survey_ids ) );
+		update_field( 'phenomenon_song_' . $track . '_total_rating', $average, 'options' );
+	}
 }
 
 
@@ -198,34 +239,10 @@ function met_phenomenon_get_track_results( $get_total = false ) {
 
 		// Confirm user has set this song already.
 		if ( isset( $song_forms[ $i ] ) ) {
-
-			// Are we getting total or just this one score?
-			if ( ! $get_total ) {
-				$args = array(
-					'fields'     => 'ids',
-					'post_type'  => 'form_entry',
-					'meta_query' => array(
-						array(
-							'key'   => '_met_phenomenon_song_id',
-							'value' => $i,
-						),
-					),
-				);
-				$survey_ids = get_posts( $args );
+			if ( $get_total ) {
+				$result[] = (int) get_field( 'phenomenon_song_' . $i . '_total_rating', 'options' );
 			} else {
-				$survey_ids = array( $song_forms[ $i ] );
-			}
-			
-			if ( $survey_ids ) {
-				foreach ( $survey_ids as $id ) {
-					$score = get_post_meta( $id, '_met_phenomenon_song_rating', true );
-					if ( $score ) {
-						$scores_total += (int) $score;
-					}
-				}
-				$result[] = ( $scores_total / count( $survey_ids ) );
-			} else {
-				$result[] = 0;
+				$result[] = (int) get_post_meta( $song_forms[ $i ], '_met_phenomenon_song_rating', true );
 			}
 		} else {
 			$result[] = 0;

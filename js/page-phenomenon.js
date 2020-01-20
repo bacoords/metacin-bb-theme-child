@@ -113,7 +113,8 @@
 							  fontWeight: 700
 							},
 							ticks: {
-								beginAtZero: true
+								beginAtZero: true,
+								max: 10
 							}
 						}]
 					}
@@ -152,7 +153,8 @@
 							  fontWeight: 700
 							},
 							ticks: {
-								beginAtZero: true
+								beginAtZero: true,
+								max: 10
 							}
 						}]
 					}
