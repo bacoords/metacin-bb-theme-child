@@ -12,8 +12,11 @@ get_header();
 			if ( have_posts() ) :
 				while ( have_posts() ) :
 					the_post();
-					the_content();
-					// get_template_part( 'content', 'page' );
+					if ( rcp_user_can_access() ) :
+						get_template_part( 'content', 'page' );
+					else :
+						the_content();
+					endif;
 				endwhile;
 			endif;
 			?>
