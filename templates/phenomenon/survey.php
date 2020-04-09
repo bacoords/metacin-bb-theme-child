@@ -1,19 +1,19 @@
 
 <div id="met-phenomenon-intro-panel-1" class="met-phenomenon-intro-panel">
 	<h2>Instruction:</h2>
-	<p>This music research project is simple and easy to perform:</p>
+	<p class="text-indent-none">This music research project is simple and easy to perform:</p>
 
-	<p>1)  First provide some easy information about your music preferences & experiences.</p>
+	<p class="">1)  First provide some easy information about your music preferences & experiences.</p>
 
-	<p>2)  Then simply choose 10 music tracks, listen and provide a few responses as you go. </p>
+	<p class="">2)  Then simply choose 10 music tracks, listen and provide a few responses as you go. </p>
 
-	<p>3)  The entire process will take about an hour.  Finish in one session or take your time.</p>
+	<p class="">3)  The entire process will take about an hour.  Finish in one session or take your time.</p>
 
-	<p>4)  It is best to listen to the music on airpods or headphones in the same quiet setting.</p>
+	<p class="">4)  It is best to listen to the music on airpods or headphones in the same quiet setting.</p>
 
-	<p>5)  You will see your results in comparison to the entire study results after each track.</p>
+	<p class="">5)  You will see your results in comparison to the entire study results after each track.</p>
 
-	<p>Let’s get started !</p>
+	<p class=""><strong><em>Let’s get started !</em> Click Begin.</strong></p>
 </div>
 <div class="met-phenomenon-intro-btn-container text-center">
 	<a href="#" class="btn btn-lg btn-phenomenon met-phenomenon-intro-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></a>

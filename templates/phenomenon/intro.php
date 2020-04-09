@@ -6,7 +6,7 @@
 		<h2>Introduction:</h2>
 		<p>Music is a universal human experience.  It is present in every culture on earth—tracing from primeval sounds of nature—to rhythms of early civilization—to melodies in modern language —to the highest forms of symphony.  Even today, music is shaping every tradition and generation.</p> 	
 		<p>The fundamental elements of music include pitch, tone, volume and time.  Patterns of these acoustic elements create motifs—structure, anticipation and relativity—that govern musical imagery.  As in spoken languages, arrangement of elements and motifs in music provides syntax and conveys meaning.  Musical patterns have the potential to improve lives—to remember, learn, create, heal and move.  Music may enhance life and its meaning.  Yet, how music achieves these effects is just beginning to be understood.</p>
-		<p>Can music attune sense and response networks of the mind in ways that promote health and wellness?  Music Imagery Research is an innovative educational project designed to explore human responses to music—and how these responses may improve quality of life.</p>
+		<p>Can music attune sense and response networks of the mind in ways that promote health and wellness?  <strong>Music Imagery Research</strong> is an innovative educational project designed to explore human responses to music—and how these responses may improve quality of life.</p>
 	</div>
 	<div id="met-phenomenon-intro-panel-2" class="met-phenomenon-intro-panel" style="display:none;">
 		<h2>Participation:</h2>
@@ -18,7 +18,7 @@
 		<h2>Appreciation:</h2>
 		<p>The Music Imagery Research project is designed and conducted as a biomedical research project.  It has been reviewed and approved by an institutional review board (IRB) to ensure all data gathering, analysis and presentation follow best practices.</p> 	
 		<p>One ideal way for the results of this research to make a difference to medical knowledge will be to publish it in an academic or medical journal or other media.  Your individual responses will not be publicized; only anonymous results from all the collective participant responses may be published.  Neither your name nor any identifying information about you will be made public.</p>
-		<p><strong>Thank you for being a valued member of the Metacin music research community.</strong></p>
+		<p class="met-phenomenon-blue"><strong>Thank you for being a valued member of the Metacin music research community.</strong></p>
 		<div class="form-group">
 			<input type="checkbox" id="_met_phenomenon_viewed_intro" name="_met_phenomenon_viewed_intro" class="form-check" value="1" required />
 			<label for="_met_phenomenon_viewed_intro">

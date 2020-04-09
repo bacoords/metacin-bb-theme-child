@@ -4,7 +4,12 @@ $phenomenon_blue: #0000FF;
 
 body.page-template-page-phenomenon {
 	h1.fl-post-title {
-		font-size: 50px;
+		display: none;
+	}
+	.phenomenon-h1 {
+		font-size: 48px;
+		text-align: center;
+		font-weight: bold;
 	}
 	.post-edit-link{
 		display: none;
@@ -217,4 +222,18 @@ body.page-template-page-phenomenon {
 
 .met-phenomenon-select-submit{
 	margin-bottom: 2em;
+}
+
+#_met_phenomenon_viewed_intro, 
+#_met_phenomenon_viewed_intro + label{
+	font-size: 16px;
+}
+
+.met-phenomenon-blue {
+	color: $phenomenon_blue;
+}
+
+.text-indent-none,
+p.text-indent-none{
+	text-indent: 0;
 }
