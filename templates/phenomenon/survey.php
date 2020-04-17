@@ -21,7 +21,7 @@
 
 
 
-<form id="met-phenomenon-intro-panel-2"  method="post" action="<?php home_url( 'laboratory/phenomenon' ); ?>" class="met-phenomenon-survey" style="display:none">
+<form id="met-phenomenon-intro-panel-2"  method="post" action="<?php echo home_url( 'laboratory/phenomenon/?intro=false' ); ?>" class="met-phenomenon-survey" style="display:none">
 
 	<input type="hidden" name="_met_phenomenon_submitted_survey" value="1">
 	<input type="hidden" name="met_action" value="_met_phenomenon_submitted_survey">

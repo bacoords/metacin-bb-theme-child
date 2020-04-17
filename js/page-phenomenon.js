@@ -10,6 +10,11 @@
 
 	$(document).ready(function($){
 
+		$('.met-phenomenon-select-intro-btn').click(function(e){
+			$('.met-phenomenon-select-intro-btn').hide();
+			$('.met-phenomenon-select-panel').show();
+		});
+
 		$('.met-phenomenon-intro-btn').click(function(e){
 			e.preventDefault();
 			var panel = $(this).data('panel') + 1,

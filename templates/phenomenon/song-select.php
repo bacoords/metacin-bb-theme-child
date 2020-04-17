@@ -10,9 +10,34 @@ $songs_array = array();
 for ( $i = 1; $i < 11; $i++ ) {
 	$songs_array[] = get_field( 'phenomenon_song_' . $i, 'options' );
 }
-?>
 
-<div class="met-phenomenon-select-panel text-center">
+$is_first_time = ( isset( $_GET['intro'] ) && 'false' == $_GET['intro'] ); 
+$style = false;
+
+if ( ! $is_first_time ) :
+	$style = 'display:none';
+	?>
+
+	<div class="met-phenomenon-select-intro-btn">
+		<div id="met-phenomenon-select-intro-panel-1" class="met-phenomenon-select-intro-panel met-phenomenon-intro-panel">
+			<h2>Welcome Back:</h2>
+			<h3><strong><em>A quick reminder –</em></strong></h3>
+			<ul>
+				<li>Simply choose a music track, listen and provide a few responses as you go forward. </li>
+				<li>Each piece will take about 10 minutes.  Finish all in one session – or take your time.</li>
+				<li>It is best to listen to the music on airpods or headphones in the same quiet setting.</li>
+				<li>You will see your results in real time as compared to overall results after each track.</li>
+			</ul>
+			<h3><strong><em>Let’s Do Research ! </em> Click Continue. </strong></h3>
+		</div>
+		<div class="met-phenomenon-select-intro-btn-container text-center">
+			<a href="#" class="btn btn-lg btn-phenomenon met-phenomenon-select-intro-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></a>
+		</div>
+	</div>
+
+<?php endif; ?>
+
+<div class="met-phenomenon-select-panel text-center" style="<?php echo esc_attr( $style ); ?>">
 	<h2><em>Select <?php echo $select; ?> Music Track</em></h2>
 	<div class="row">
 		<div class="col-sm-offset-1 col-xs-4 col-sm-2">
