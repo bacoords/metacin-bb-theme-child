@@ -31,5 +31,5 @@ $track = isset( $_GET['song'] ) ? $_GET['song'] : 1; ?>
 
 
 <div class="met-phenomenon-select-submit text-center">
-	<a class="btn btn-lg btn-phenomenon met-phenomenon-submit-btn" href="<?php echo esc_attr( home_url( 'laboratory/phenomenon' ) ); ?>">Continue <i class="fas fa-play-circle"></i></a>
+	<a class="btn btn-lg btn-phenomenon met-phenomenon-submit-btn" href="<?php echo esc_attr( home_url( 'laboratory/phenomenon/?intro=false' ) ); ?>">Continue <i class="fas fa-play-circle"></i></a>
 </div>

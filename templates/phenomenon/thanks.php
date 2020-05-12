@@ -9,21 +9,27 @@
 				wings to the mind – <br>
 				flight to the imagination – <br>
 				and charm to life.<br>
-				Plato
+				<strong>Plato</strong>
 			</p>
 
-			<p class="lead">Any music can entertain you.</p>
+			<p class="lead font-weight-bold mb-0"><strong>Any music can entertain you.</strong></p>
 
-			<p class="lead">What if music can improve you ?</p>
+			<p class="lead font-weight-bold text-primary"><em><strong>What if music can improve you ?</strong></em></p>
 
 			<p>You are invited to receive our mailing list of performances, releases and reviews.</p>
 
-			<p>Learn more at <a href="<?php echo esc_attr( home_url() ); ?>">Metacin.com</a></p>
+			<p>Learn more at <a href="<?php echo esc_attr( home_url() ); ?>" class="text-primary">Metacin.com</a></p>
 		</div>
 
 	</div>
 
 	<div class="met-phenomenon-intro-btn-container text-center">
-		<a href="<?php echo esc_attr( home_url() ); ?>" class="btn btn-lg btn-phenomenon">Home <i class="fas fa-play-circle"></i></a>
+		<h3 class="text-white">Enjoy the <em>Phenomenon</em> music album.</h3>
+		<a href="<?php echo esc_attr( home_url( 'music/phenomenon/' ) ); ?>" class="btn btn-lg btn-phenomenon"><span class="text-primary">Phenomenon</span> <i class="fas fa-play-circle"></i></a>
+	</div>
+
+	<div class="met-phenomenon-intro-btn-container text-center">
+		<h3 class="text-white">Explore music imagery in the <em>Eye Gallery</em>.</h3>
+		<a href="<?php echo esc_attr( home_url( 'gallery/' ) ); ?>" class="btn btn-lg btn-phenomenon"><span class="text-primary">Eye Gallery</span> <i class="fas fa-play-circle"></i></a>
 	</div>
 

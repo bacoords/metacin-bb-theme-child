@@ -28,7 +28,7 @@ if ( ! $is_first_time ) :
 				<li>It is best to listen to the music on airpods or headphones in the same quiet setting.</li>
 				<li>You will see your results in real time as compared to overall results after each track.</li>
 			</ul>
-			<h3><strong><em>Let’s Do Research ! </em> Click Continue. </strong></h3>
+			<h3><strong><em>Let’s Do Research ! </em></strong></h3>
 		</div>
 		<div class="met-phenomenon-select-intro-btn-container text-center">
 			<a href="#" class="btn btn-lg btn-phenomenon met-phenomenon-select-intro-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></a>

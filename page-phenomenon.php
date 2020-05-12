@@ -25,6 +25,10 @@ get_header();
 
 				<?php get_template_part( 'templates/phenomenon/survey' ); ?>
 
+			<?php elseif ( met_phenomonon_user_completed_all_songs() ) : ?>
+
+				<?php get_template_part( 'templates/phenomenon/thanks' ); ?>
+
 			<?php else : ?>
 
 				<?php if ( isset( $_GET['song'] ) ) : ?>

@@ -31,8 +31,7 @@
 		<a href="#" class="btn btn-lg btn-phenomenon met-phenomenon-intro-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></a>
 	</div>
 	<div class="met-phenomenon-intro-submit-container text-center" style="display:none">
-		<button type="submit" class="btn btn-lg btn-phenomenon met-phenomenon-submit-btn" data-panel="1">Begin <i class="fas fa-play-circle"></i></button>
+		<button type="submit" class="btn btn-lg btn-phenomenon met-phenomenon-submit-btn" data-panel="1">Continue <i class="fas fa-play-circle"></i></button>
 	</div>
 
-	
 </form>

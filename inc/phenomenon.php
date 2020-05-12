@@ -251,3 +251,28 @@ function met_phenomenon_get_track_results( $get_total = false ) {
 
 	return $result;
 }
+
+
+
+/**
+ * Determine if a user as completed all songs.
+ *
+ * @param integer $user_id
+ * @return void
+ */
+function met_phenomonon_user_completed_all_songs( $user_id = 0 ) {
+	if ( ! $user_id ) {
+		$user_id = get_current_user_id();
+	}
+
+	$songs = get_user_meta( $user_id, '_met_phenomenon_form_entries', true );
+
+	for ( $i = 1; $i < 11; $i++ ) {
+		if ( ! isset( $songs[ $i ] ) ) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
